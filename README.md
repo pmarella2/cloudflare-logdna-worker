@@ -26,3 +26,47 @@ A cloudflare worker script to forward logs to [logdna](https://logdna.com/)
 + tlsCipher
 + tlsVersion
 + clientTrustScore
+
+```
+{
+  "ua": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0",
+  "referer": "empty",
+  "ip": "54.38.134.219",
+  "countryCode": "FR",
+  "colo": "CDG",
+  "workerInception": 1605428892780,
+  "workerId": "97VRQS",
+  "url": "http://praneethmarella.xyz/wp-login.php",
+  "x_forwarded_for": "0.0.0.0",
+  "asn": 16276,
+  "cfRay": "5f2798f3ba01ee2b",
+  "tlsCipher": "",
+  "tlsVersion": "",
+  "originTime": 19,
+  "cfCache": "DYNAMIC",
+  "raw": {
+    "cf": {
+      "clientTcpRtt": 30,
+      "tlsVersion": "",
+      "httpProtocol": "HTTP/1.1",
+      "tlsCipher": "",
+      "edgeRequestKeepAliveStatus": 1,
+      "requestPriority": "",
+      "country": "FR",
+      "clientAcceptEncoding": "gzip",
+      "colo": "CDG",
+      "tlsClientAuth": "{\n  \"certIssuerDNLegacy\": \"\",\n  \"certIssuerDN\": \"\",\n  \"certIssuerDNRFC2253\": \"\",\n  \"certSubjectDNLegacy\": \"\",\n  \"certNotAfter\": \"\",\n  \"certVerified\": \"NONE\",\n  \"certFingerprintSHA1\": \"\",\n  \"certSubjectDN\": \"\",\n  \"certFingerprintSHA256\": \"\",\n  \"certNotBefore\": \"\",\n  \"certSerial\": \"\",\n  \"certPresented\": \"0\",\n  \"certSubjectDNRFC2253\": \"\"\n}",
+      "asn": 16276
+    },
+    "fetcher": {},
+    "redirect": "manual",
+    "headers": {},
+    "url": "http://praneethmarella.xyz/wp-login.php",
+    "method": "GET",
+    "bodyUsed": false,
+    "body": null
+  },
+  "_method": "GET",
+  "_status": 308
+}
+```
