@@ -1,5 +1,5 @@
-# cf-dnalog-worker
-simple cloudflare worker recipe to send logs into [logdna](https://logdna.com/)
+# cloudflare-dnalog-worker
+a cloudflare worker script to forward logs to [logdna](https://logdna.com/)
 
 ## how to use
 copy index.js content into your worker
