@@ -31,6 +31,7 @@ A cloudflare worker script to forward logs to [logdna](https://logdna.com/)
 <p align="center">
   <img src="https://github.com/pmarella2/cloudflare-logdna-worker/blob/master/Log_Format.png?raw=true" alt="Log Format"/>
 </p>
+
 ```
 {
   "ua": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0",
