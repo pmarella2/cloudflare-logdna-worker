@@ -27,6 +27,11 @@ A cloudflare worker script to forward logs to [logdna](https://logdna.com/)
 + tlsVersion
 + clientTrustScore
 
+## Log export format
+```
+data.meta.ip + " - - " + data.meta.method + " | " + data.meta.status + " | " + data.meta.url + " | " + data.meta.ua + " | " + data.meta.referer + " | " + data.meta.x_forwarded_for;
+```
+
 ## Sample log ingested from the worker
 <p align="center">
   <img src="https://github.com/pmarella2/cloudflare-logdna-worker/blob/master/Log_Format.png?raw=true" alt="Log Format"/>
