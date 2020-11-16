@@ -28,6 +28,9 @@ A cloudflare worker script to forward logs to [logdna](https://logdna.com/)
 + clientTrustScore
 
 ## Sample log ingested from the worker
+<p align="center">
+  <img src="https://github.com/pmarella2/cloudflare-logdna-worker/blob/master/Log_Format.png?raw=true" alt="Log Format"/>
+</p>
 
 ```
 {
