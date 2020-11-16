@@ -27,6 +27,8 @@ A cloudflare worker script to forward logs to [logdna](https://logdna.com/)
 + tlsVersion
 + clientTrustScore
 
+## Sample log ingested from the worker
+
 ```
 {
   "ua": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0",
