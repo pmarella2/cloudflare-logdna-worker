@@ -1,7 +1,7 @@
 let requests = [];
 let workerInception, workerId, requestStartTime, requestEndTime;
 let batchIsRunning = false;
-const maxRequestsPerBatch = 150;
+const maxRequestsPerBatch = 250;
 
 addEventListener('fetch', event => {
     event.passThroughOnException();
@@ -44,7 +44,7 @@ function sleep(ms) {
 
 function getRequestData(request, re) {
     let data = {
-        'app': 'myApp',
+        'app': 'cloudflare[proxy]',
         'timestamp': Date.now(),
         'meta': {
             'ua': request.headers.get('user-agent'),
@@ -65,19 +65,20 @@ function getRequestData(request, re) {
             'status': (re || {}).status,
             'originTime': (requestEndTime - requestStartTime),
             'cfCache': (re) ? (re.headers.get('CF-Cache-Status') || 'miss') : 'MISS',
+            'raw': request,
         }
     };
-    data.line = data.meta.status + " " + data.meta.countryCode + " " + data.meta.cfCache + " " + data.meta.originTime + 'ms' + " " + data.meta.ip + " " + data.meta.url;
+    data.line = data.meta.ip + " - - " + data.meta.method + " | " + data.meta.status + " | " + data.meta.url + " | " + data.meta.ua + " | " + data.meta.referer + " | " + data.meta.x_forwarded_for;
     return data;
 }
 
 async function postRequests() {
-    //console.log('posting',data);
-    let data = JSON.stringify({'lines': requests});
-    const username = 'My logdna Ingestion key';
+    //console.log('posting', data);
+    let data = JSON.stringify({ 'lines': requests });
+    const username = 'yourIngestionKey';
     const password = '';
     const compiledPass = '';
-    const hostname = 'example.com';
+    const hostname = 'yourHostName';
     let myHeaders = new Headers();
     myHeaders.append('Content-Type', 'application/json; charset=UTF-8');
     myHeaders.append('Authorization', 'Basic ' + (compiledPass || btoa(username + ':' + password)));
