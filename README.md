@@ -1,13 +1,13 @@
-# cloudflare-dnalog-worker
-a cloudflare worker script to forward logs to [logdna](https://logdna.com/)
+# cloudflare-dnalog-worker (modified by pmarella2)
+A cloudflare worker script to forward logs to [logdna](https://logdna.com/)
 
-## how to use
-copy index.js content into your worker
-change myApp and myHostName into whatever you want, read the logdna [Ingest API](https://docs.logdna.com/v1.0/reference#api)
+## How to use
+1. Naviagate to index.js and copy it contents
+2. Change yourAppName and yourHostName to your app name and host name, read the logdna [Ingest API](https://docs.logdna.com/v1.0/reference#api)
+* You can also change maxRequestsPerBatch - it dictates how many maximum requests to batch per export, by default it is set to send all the batched requests once per 10 seconds
+3. Paste it into your worker editor in cloudflare
 
-* maxRequestsPerBatch - how many requests to maximum batch per sending, by default it send all the batched requests once per 10 seconds
-
-## about compiledPass
+## About compiledPass
 
 you should precompile your logdna ingestion key and store it in the compilePass parameters, you can simply type in console `btoa(username+':'+password)` where username is your ingestion key and password keep empty, and put the results into the parameter to save some cpu time(probably)
 
