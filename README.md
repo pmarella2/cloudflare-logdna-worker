@@ -1,4 +1,4 @@
-# cloudflare-dnalog-worker (modified by pmarella2)
+# cloudflare-logdna-worker (modified by pmarella2)
 A cloudflare worker script to forward logs to [logdna](https://logdna.com/)
 
 ## How to use
